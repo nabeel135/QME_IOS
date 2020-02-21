@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="notificationCellNib" customModule="QMe" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="385" height="79"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ilg-Du-sRf" customClass="sbView" customModule="QMe" customModuleProvider="target">
+                    <rect key="frame" x="10" y="5" width="365" height="69"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="notification message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wr-vQ-l1J">
+                            <rect key="frame" x="10" y="5" width="345" height="59"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.85995666115417091" green="0.85995666115417091" blue="0.85995666115417091" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="6wr-vQ-l1J" firstAttribute="top" secondItem="Ilg-Du-sRf" secondAttribute="top" constant="5" id="96M-sN-egI"/>
+                        <constraint firstItem="6wr-vQ-l1J" firstAttribute="leading" secondItem="Ilg-Du-sRf" secondAttribute="leading" constant="10" id="QHv-m5-hgW"/>
+                        <constraint firstAttribute="trailing" secondItem="6wr-vQ-l1J" secondAttribute="trailing" constant="10" id="WMU-j3-tK2"/>
+                        <constraint firstAttribute="bottom" secondItem="6wr-vQ-l1J" secondAttribute="bottom" constant="5" id="reM-Z4-ceX"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ilg-Du-sRf" secondAttribute="trailing" constant="10" id="114-Ms-Zdc"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Ilg-Du-sRf" secondAttribute="bottom" constant="5" id="7D9-yc-Hu1"/>
+                <constraint firstItem="Ilg-Du-sRf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="VE8-iz-PYH"/>
+                <constraint firstItem="Ilg-Du-sRf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="znx-mb-7qd"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="message" destination="6wr-vQ-l1J" id="STT-rt-EtU"/>
+            </connections>
+            <point key="canvasLocation" x="116.66666666666667" y="-144.97767857142856"/>
+        </view>
+    </objects>
+</document>

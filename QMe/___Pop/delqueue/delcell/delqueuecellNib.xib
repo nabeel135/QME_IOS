@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="delqueueCell" customModule="QMe" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="313" height="63"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="queue Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpF-1k-LbD">
+                    <rect key="frame" x="20" y="5" width="72" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time period" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HME-Ns-jqv">
+                    <rect key="frame" x="20" y="35" width="55" height="23"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KH7-k0-wyF">
+                    <rect key="frame" x="263" y="5" width="30" height="53"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="xVY-ls-YFH"/>
+                    </constraints>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="trash" catalog="system"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="HME-Ns-jqv" secondAttribute="bottom" constant="5" id="2N0-bg-Gew"/>
+                <constraint firstItem="KH7-k0-wyF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="8D1-AT-LFE"/>
+                <constraint firstItem="HME-Ns-jqv" firstAttribute="height" secondItem="tpF-1k-LbD" secondAttribute="height" multiplier="0.766667" id="JcD-p5-8DF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="KH7-k0-wyF" secondAttribute="bottom" constant="5" id="W8q-eO-v0J"/>
+                <constraint firstItem="HME-Ns-jqv" firstAttribute="leading" secondItem="tpF-1k-LbD" secondAttribute="leading" id="X67-xa-ecE"/>
+                <constraint firstItem="tpF-1k-LbD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="de1-po-8j5"/>
+                <constraint firstItem="tpF-1k-LbD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="sI9-IP-pnn"/>
+                <constraint firstAttribute="trailing" secondItem="KH7-k0-wyF" secondAttribute="trailing" constant="20" id="tfz-3s-1Nu"/>
+                <constraint firstItem="HME-Ns-jqv" firstAttribute="top" secondItem="tpF-1k-LbD" secondAttribute="bottom" id="uDx-Ii-FNd"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="delbtn" destination="KH7-k0-wyF" id="fNb-b5-ExN"/>
+                <outlet property="queueName" destination="tpF-1k-LbD" id="0dT-NB-pjc"/>
+                <outlet property="timeperiod" destination="HME-Ns-jqv" id="ez1-8o-e2y"/>
+            </connections>
+            <point key="canvasLocation" x="64.492753623188406" y="-166.40625"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="trash" catalog="system" width="60" height="64"/>
+    </resources>
+</document>

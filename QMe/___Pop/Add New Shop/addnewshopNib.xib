@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="addnewshop" customModule="QMe" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="434" height="696"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27x-rr-ICh">
+                    <rect key="frame" x="20" y="94" width="394" height="518"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADD NEW SHOP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rO-jK-c1v">
+                            <rect key="frame" x="10" y="10" width="108" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugA-AS-cNW" customClass="sbButton" customModule="QMe" customModuleProvider="target">
+                            <rect key="frame" x="147" y="87" width="100" height="40"/>
+                            <color key="backgroundColor" red="0.21652081610000001" green="0.2892589867" blue="0.36084893350000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="1DC-dn-ICF"/>
+                                <constraint firstAttribute="width" constant="100" id="zug-d6-ydZ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Submit">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgd-iO-l3g">
+                            <rect key="frame" x="187" y="137" width="20" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan QR Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ud7-IG-XoK">
+                            <rect key="frame" x="156" y="164" width="82" height="15"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PFx-5l-f8U">
+                            <rect key="frame" x="10" y="189" width="374" height="319"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Shop Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p3w-uA-gMQ">
+                            <rect key="frame" x="10" y="37" width="374" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="6uc-59-VJI"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Ud7-IG-XoK" firstAttribute="centerX" secondItem="27x-rr-ICh" secondAttribute="centerX" id="44S-iL-5uw"/>
+                        <constraint firstItem="7rO-jK-c1v" firstAttribute="top" secondItem="27x-rr-ICh" secondAttribute="top" constant="10" id="Eqh-h9-ygt"/>
+                        <constraint firstAttribute="trailing" secondItem="p3w-uA-gMQ" secondAttribute="trailing" constant="10" id="Eru-e2-PE5"/>
+                        <constraint firstItem="7rO-jK-c1v" firstAttribute="leading" secondItem="27x-rr-ICh" secondAttribute="leading" constant="10" id="FJ4-fe-37W"/>
+                        <constraint firstItem="Ud7-IG-XoK" firstAttribute="top" secondItem="mgd-iO-l3g" secondAttribute="bottom" constant="10" id="Fmm-Fb-AQb"/>
+                        <constraint firstItem="PFx-5l-f8U" firstAttribute="leading" secondItem="27x-rr-ICh" secondAttribute="leading" constant="10" id="FvG-vn-SQi"/>
+                        <constraint firstItem="PFx-5l-f8U" firstAttribute="top" secondItem="Ud7-IG-XoK" secondAttribute="bottom" constant="10" id="IZU-8t-hAs"/>
+                        <constraint firstItem="ugA-AS-cNW" firstAttribute="centerX" secondItem="27x-rr-ICh" secondAttribute="centerX" id="OCc-aJ-g0Y"/>
+                        <constraint firstItem="p3w-uA-gMQ" firstAttribute="leading" secondItem="27x-rr-ICh" secondAttribute="leading" constant="10" id="PQ1-b4-C1Y"/>
+                        <constraint firstAttribute="trailing" secondItem="PFx-5l-f8U" secondAttribute="trailing" constant="10" id="Qiw-u3-11w"/>
+                        <constraint firstAttribute="bottom" secondItem="PFx-5l-f8U" secondAttribute="bottom" constant="10" id="Xxt-X3-Z7r"/>
+                        <constraint firstItem="mgd-iO-l3g" firstAttribute="top" secondItem="ugA-AS-cNW" secondAttribute="bottom" constant="10" id="dxN-gG-gM5"/>
+                        <constraint firstItem="p3w-uA-gMQ" firstAttribute="top" secondItem="7rO-jK-c1v" secondAttribute="bottom" constant="10" id="m2S-u4-Otf"/>
+                        <constraint firstItem="ugA-AS-cNW" firstAttribute="top" secondItem="p3w-uA-gMQ" secondAttribute="bottom" constant="10" id="qJf-dt-IkO"/>
+                        <constraint firstItem="mgd-iO-l3g" firstAttribute="centerX" secondItem="27x-rr-ICh" secondAttribute="centerX" id="rPz-tm-19S"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="27x-rr-ICh" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="50" id="Wz3-lc-2MD"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="27x-rr-ICh" secondAttribute="trailing" constant="20" id="Zq5-hp-Osr"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="27x-rr-ICh" secondAttribute="bottom" constant="50" id="adG-Fc-UUi"/>
+                <constraint firstItem="27x-rr-ICh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="yR7-RV-cMY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="scannerview" destination="PFx-5l-f8U" id="6p7-rB-27e"/>
+                <outlet property="shopcode" destination="p3w-uA-gMQ" id="vdi-7e-4JP"/>
+                <outlet property="submit" destination="ugA-AS-cNW" id="AB0-eK-mHJ"/>
+            </connections>
+            <point key="canvasLocation" x="152.17391304347828" y="61.607142857142854"/>
+        </view>
+    </objects>
+</document>
