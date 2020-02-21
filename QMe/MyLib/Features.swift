@@ -722,6 +722,18 @@ extension String {
     func toInt() -> Int{
         return Int(self) ?? Int()
     }
+    func toQRImage()->UIImage{
+        let data = self.data(using: .ascii, allowLossyConversion: false)
+        let filter = CIFilter(name: "CIQRCodeGenerator")
+        filter?.setValue(data, forKey: "InputMessage")
+        
+        let ciimage = filter?.outputImage
+        
+        let transformedImage = (ciimage?.transformed(by: CGAffineTransform(scaleX: 10, y: 10)))!
+        
+        
+        return UIImage(ciImage: transformedImage)
+    }
 }
 
 

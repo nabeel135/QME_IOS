@@ -14,30 +14,30 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Queue name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7VN-b8-vJp">
-                    <rect key="frame" x="30" y="10" width="71.5" height="46.5"/>
+                    <rect key="frame" x="10" y="10" width="71.5" height="46.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6am - 7am" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yB3-k6-0nN">
-                    <rect key="frame" x="30" y="56.5" width="51.5" height="34.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6am - 7am" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yB3-k6-0nN">
+                    <rect key="frame" x="10" y="56.5" width="176.5" height="34.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FK9-Dk-GpB">
-                    <rect key="frame" x="261" y="40.5" width="30" height="30"/>
+                    <rect key="frame" x="253.5" y="40.5" width="30" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="Acr-OA-ZX8"/>
                         <constraint firstAttribute="height" constant="30" id="Vjg-EM-0EJ"/>
                     </constraints>
                     <state key="normal" image="+"/>
                 </button>
-                <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no min" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bmw-Ae-DFN" customClass="sbTextField" customModule="QMe" customModuleProvider="target">
-                    <rect key="frame" x="211" y="40.5" width="50" height="30"/>
+                <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="no" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bmw-Ae-DFN" customClass="sbTextField" customModule="QMe" customModuleProvider="target">
+                    <rect key="frame" x="218.5" y="40.5" width="35" height="30"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="50" id="GCO-qX-KTf"/>
+                        <constraint firstAttribute="width" constant="35" id="GCO-qX-KTf"/>
                         <constraint firstAttribute="height" constant="30" id="tIo-oQ-qyy"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -52,7 +52,7 @@
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b65-C5-4ly">
-                    <rect key="frame" x="181" y="40.5" width="30" height="30"/>
+                    <rect key="frame" x="188.5" y="40.5" width="30" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Gbf-uX-Bng"/>
                         <constraint firstAttribute="width" constant="30" id="kQI-W6-sKz"/>
@@ -60,7 +60,7 @@
                     <state key="normal" image="-"/>
                 </button>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y1a-kr-fLf">
-                    <rect key="frame" x="393" y="40" width="51" height="31"/>
+                    <rect key="frame" x="413" y="40" width="51" height="31"/>
                     <connections>
                         <action selector="queueSwitch:" destination="iN0-l3-epB" eventType="valueChanged" id="nmp-7T-D1f"/>
                     </connections>
@@ -68,13 +68,14 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Y1a-kr-fLf" secondAttribute="trailing" constant="30" id="135-Bd-Jsi"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Y1a-kr-fLf" secondAttribute="trailing" constant="10" id="135-Bd-Jsi"/>
+                <constraint firstItem="b65-C5-4ly" firstAttribute="leading" secondItem="yB3-k6-0nN" secondAttribute="trailing" constant="2" id="4R6-A1-ONF"/>
                 <constraint firstItem="FK9-Dk-GpB" firstAttribute="leading" secondItem="bmw-Ae-DFN" secondAttribute="trailing" id="FIH-FG-6Td"/>
                 <constraint firstAttribute="bottom" secondItem="yB3-k6-0nN" secondAttribute="bottom" constant="10" id="GWn-Tm-HY4"/>
                 <constraint firstItem="yB3-k6-0nN" firstAttribute="leading" secondItem="7VN-b8-vJp" secondAttribute="leading" id="HDY-ti-K1C"/>
                 <constraint firstItem="Y1a-kr-fLf" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="Ko1-LP-0NM"/>
                 <constraint firstItem="7VN-b8-vJp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="LRr-y0-UaY"/>
-                <constraint firstItem="7VN-b8-vJp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="LrT-BQ-LVy"/>
+                <constraint firstItem="7VN-b8-vJp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="LrT-BQ-LVy"/>
                 <constraint firstItem="bmw-Ae-DFN" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="OYt-UY-slZ"/>
                 <constraint firstItem="yB3-k6-0nN" firstAttribute="top" secondItem="7VN-b8-vJp" secondAttribute="bottom" id="aMn-Gv-KaH"/>
                 <constraint firstItem="FK9-Dk-GpB" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="aYG-Hv-zZ4"/>

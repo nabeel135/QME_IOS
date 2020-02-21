@@ -244,7 +244,7 @@ class a {
                         onSuccess: {
                             any.stopLoader()
                             if db.json["success"].stringValue == "0" {
-                                any.showAlert(Title: "unAssigned Queue", Message: db.json["message"].stringValue)
+//                                any.showAlert(Title: "unAssigned Queue", Message: db.json["message"].stringValue)
                             }
                             else{
                                 unAssignedQueueList.removeAll()

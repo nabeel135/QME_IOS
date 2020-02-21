@@ -105,7 +105,7 @@ class adminshopcell: UIView {
                     let d = JSON(data)
                     (self.parent as! UIViewController).stopLoader()
                     /*--------------------------*/
-                    (self.parent as! UIViewController).showAlert(Title: "Message", Message: d["message"].stringValue)
+//                    (self.parent as! UIViewController).showAlert(Title: "Message", Message: d["message"].stringValue)
                     /*--------------------------*/
                 case .failure(let err):
                     (self.parent as! UIViewController).stopLoader()

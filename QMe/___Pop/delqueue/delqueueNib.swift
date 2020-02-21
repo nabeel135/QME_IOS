@@ -38,7 +38,7 @@ class delqueueNib: UIView {
     
     
     func tableUI(){
-        table.TableView(x: 10, y: 60, width: x-120, height: bodyview.frame.size.height-110, bkcolor: .clear, border: 0, borderColor: .clear, separatorColor: .clear, Sections: 1, SectionHeight: 0, SectionHEIGHT: {
+        table.TableView(x: 10, y: 60, width: x-40, height: bodyview.frame.size.height-110, bkcolor: .clear, border: 0, borderColor: .clear, separatorColor: .clear, Sections: 1, SectionHeight: 0, SectionHEIGHT: {
         }, sectionView: {
         }, rows: QueueListobj.count, Rows: {
         }, editing: false, cellheight: 40, CellHeight: {

@@ -916,6 +916,16 @@ extension UIViewController {
 
 
 
+
+
+// MARK:- View To Image Convertor
+
+func viewtoImageConvertor(targetView:UIView)->UIImage{
+    UIGraphicsBeginImageContext(targetView.frame.size)
+    targetView.layer.render(in: UIGraphicsGetCurrentContext()!)
+    return UIGraphicsGetImageFromCurrentImageContext()!
+}
+
 // MARK:- Extension UIView
 
 public enum innerShadowSide{

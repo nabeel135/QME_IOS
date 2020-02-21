@@ -14,7 +14,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P8H-kb-iZm" customClass="sbView" customModule="QMe" customModuleProvider="target">
-                    <rect key="frame" x="50" y="132.5" width="348" height="450"/>
+                    <rect key="frame" x="10" y="132.5" width="428" height="450"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Queue(s)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoO-as-DUg">
                             <rect key="frame" x="20" y="40" width="90" height="17"/>
@@ -23,7 +23,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48Y-ZW-qIl" customClass="sbButton" customModule="QMe" customModuleProvider="target">
-                            <rect key="frame" x="124" y="390" width="100" height="40"/>
+                            <rect key="frame" x="164" y="390" width="100" height="40"/>
                             <color key="backgroundColor" red="0.21652081610000001" green="0.2892589867" blue="0.36084893350000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="100" id="Z0A-1S-xvm"/>
@@ -38,7 +38,7 @@
                             </userDefinedRuntimeAttributes>
                         </button>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Queue Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FRO-f0-W7C">
-                            <rect key="frame" x="20" y="77" width="308" height="35"/>
+                            <rect key="frame" x="20" y="77" width="388" height="35"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="U1Z-tI-TwY"/>
                             </constraints>
@@ -82,7 +82,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="No. of Persons in Queue" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YLn-9A-SCL">
-                            <rect key="frame" x="20" y="167" width="308" height="35"/>
+                            <rect key="frame" x="20" y="167" width="388" height="35"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="NGO-UK-S2O"/>
                             </constraints>
@@ -90,7 +90,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6G-EC-Khi">
-                            <rect key="frame" x="313" y="10" width="25" height="25"/>
+                            <rect key="frame" x="393" y="10" width="25" height="25"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="25" id="HpM-X7-J1r"/>
                                 <constraint firstAttribute="width" constant="25" id="kD1-Xa-JY7"/>
@@ -149,8 +149,8 @@
             <color key="backgroundColor" white="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="P8H-kb-iZm" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="GjT-VQ-iyZ"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="P8H-kb-iZm" secondAttribute="trailing" constant="50" id="Sen-fn-plF"/>
-                <constraint firstItem="P8H-kb-iZm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="WnT-zS-79b"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="P8H-kb-iZm" secondAttribute="trailing" constant="10" id="Sen-fn-plF"/>
+                <constraint firstItem="P8H-kb-iZm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="WnT-zS-79b"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

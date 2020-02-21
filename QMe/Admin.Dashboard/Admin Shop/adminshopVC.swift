@@ -69,6 +69,8 @@ class adminshopVC: UIViewController {
     @IBOutlet weak var timeperiod: UILabel!
     
     @IBOutlet weak var shopSwitch: UISwitch!
+    @IBOutlet weak var shopcode: UILabel!
+    @IBOutlet weak var QRcode: UIImageView!
     
     @IBOutlet weak var editshopbtn: UIButton!
     @IBOutlet weak var requestbtn: UIButton!
@@ -82,7 +84,7 @@ class adminshopVC: UIViewController {
         
         bodyscroll.ScrollView(x: 0, y: 70, width: x, height: y-70, bkcolor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), contentwidth: x, contentheight: y-70, view: view)
         
-        bodyview.frame = CGRect(x: 0, y: 0, width: x, height: 260)
+        bodyview.frame = CGRect(x: 0, y: 0, width: x, height: 334)
         bodyscroll.scrollview.addSubview(bodyview)
         
 
@@ -96,6 +98,8 @@ class adminshopVC: UIViewController {
         
         let obj = adminShopListobj[Selectedshopindex]
         shopname.text = obj.shop_name
+        shopcode.text = obj.shop_code
+        QRcode.image = obj.shop_code.toQRImage()
         timeperiod.text = obj.fromtime+"-"+obj.totime
         if obj.status == "Active" {self.shopSwitch.isOn = true}
         else{self.shopSwitch.isOn = false}
@@ -113,7 +117,7 @@ class adminshopVC: UIViewController {
     let table = UI()
     
     func tableUI(){
-        table.TableView(x: 0, y: section.frame.maxY, width: x, height: 500, bkcolor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), border: 0, borderColor: .clear, separatorColor: .clear, Sections: 1, SectionHeight: 0, SectionHEIGHT: {
+        table.TableView(x: 0, y: section.frame.maxY, width: x, height: y-70-bodyview.frame.size.height, bkcolor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), border: 0, borderColor: .clear, separatorColor: .clear, Sections: 1, SectionHeight: 0, SectionHEIGHT: {
         }, sectionView: {
         }, rows: QueueListobj.count+1, Rows: {
         }, editing: false, cellheight: 50, CellHeight: {
@@ -184,7 +188,8 @@ class adminshopVC: UIViewController {
     
     @IBAction func shareShopCodeBtn(_ sender: UIButton) {
         sender.bouncybutton {
-            self.shareOnSocialMedia(Content: [adminShopListobj[Selectedshopindex].shop_code], ONsuccess: {
+            self.shareOnSocialMedia(Content: ["Shop Name: \(adminShopListobj[Selectedshopindex].shop_name)",
+            "Shop Code: \(adminShopListobj[Selectedshopindex].shop_code)"], ONsuccess: {
                 self.showAlert(Title: "Success", Message: "Successfully shared")
             }, ONfail: {
                 self.showAlert(Title: "Error", Message: "failed to Share")
@@ -195,12 +200,14 @@ class adminshopVC: UIViewController {
     
     @IBAction func shareShopQRcodeBtn(_ sender: UIButton) {
         sender.bouncybutton {
-            self.shareOnSocialMedia(Content: [adminShopListobj[Selectedshopindex].shop_code], ONsuccess: {
+            self.shareOnSocialMedia(Content: ["Shop Name: \(adminShopListobj[Selectedshopindex].shop_name)","Shop Code: \(adminShopListobj[Selectedshopindex].shop_code)",self.QRcode.image!], ONsuccess: {
                 self.showAlert(Title: "Success", Message: "Successfully shared")
             }, ONfail: {
                 self.showAlert(Title: "Error", Message: "failed to Share")
             })
         }
+        
+        
     }
     
     @IBAction func shopSwitch(_ sender: UIButton) {
@@ -280,6 +287,18 @@ class adminshopVC: UIViewController {
     
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
