@@ -34,9 +34,9 @@ class accountypeVC: UIViewController {
     
     @IBAction func btn(_ sender: UIButton) {
         sender.bouncybutton {
-            if "Login As User" == sender.currentTitle! {
-                save(value: true, key: isUser)
-            }
+//            if "Login As User" == sender.currentTitle! {
+//                save(value: true, key: isUser)
+//            }
             save(value: sender.currentTitle!, key: loginAstitle)
             self.present(storyboardView(boardName: "main", pageID: "loginVC"), animated: false)
         }

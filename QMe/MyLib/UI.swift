@@ -815,6 +815,70 @@ class UI: UIView {
 }
 
 
+// MARK:- Constraints
+
+extension UIView {
+    func leading(_ equalTo:NSLayoutXAxisAnchor,constant:CGFloat) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.leadingAnchor.constraint(equalTo: equalTo, constant: constant).isActive = true
+    }
+    func trailing(_ equalTo:NSLayoutXAxisAnchor,constant:CGFloat){
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.trailingAnchor.constraint(equalTo: equalTo, constant: constant).isActive = true
+    }
+    func left(_ equalTo:NSLayoutXAxisAnchor,constant:CGFloat){
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.leftAnchor.constraint(equalTo: equalTo, constant: constant).isActive = true
+    }
+    func right(_ equalTo:NSLayoutXAxisAnchor,constant:CGFloat){
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.rightAnchor.constraint(equalTo: equalTo, constant: constant).isActive = true
+    }
+    
+    func top(_ equalTo:NSLayoutYAxisAnchor,constant:CGFloat){
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.topAnchor.constraint(equalTo: equalTo, constant: constant).isActive = true
+    }
+    
+    func bottom(_ equalTo:NSLayoutYAxisAnchor,constant:CGFloat){
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.bottomAnchor.constraint(equalTo: equalTo, constant: constant).isActive = true
+    }
+    func width(constant:CGFloat){
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.widthAnchor.constraint(equalToConstant: constant).isActive = true
+    }
+    func width_lessThanorEqualTo(constant:CGFloat){
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.widthAnchor.constraint(lessThanOrEqualToConstant: constant).isActive = true
+    }
+    func height_lessThanorEqualTo(constant:CGFloat){
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.heightAnchor.constraint(lessThanOrEqualToConstant: constant).isActive = true
+    }
+    func height_GreterThanorEqualTo(constant:CGFloat){
+        self.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.heightAnchor.constraint(greaterThanOrEqualToConstant: constant).isActive = true
+    }
+    func height(constant:CGFloat){
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.heightAnchor.constraint(equalToConstant: constant).isActive = true
+
+    }
+    func centerX(_ equalTo:NSLayoutXAxisAnchor,constant:CGFloat){
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.centerXAnchor.constraint(equalTo: equalTo, constant: constant).isActive = true
+    }
+    func centerY(_ equalTo:NSLayoutYAxisAnchor,constant:CGFloat){
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.centerYAnchor.constraint(equalTo: equalTo, constant: constant).isActive = true
+    }
+    
+    
+}
+
+
 
 
 

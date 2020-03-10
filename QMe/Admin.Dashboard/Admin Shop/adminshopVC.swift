@@ -92,6 +92,7 @@ class adminshopVC: UIViewController {
     
     
     //MARK:- View Will Appear
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         
@@ -144,14 +145,13 @@ class adminshopVC: UIViewController {
             cellview.subtractperson.isHidden = true
             cellview.switchbtn.isHidden = true
             cellview.Input(
-            any: self,
-            queueid: "",
-            queueName: "Unassigned Queue",
-            timePeriod: "",
-            no_of_persons: "\(unAssignedQueueList.count)",
+                any: self,
+                queueid: "",
+                queueName: "Unassigned Queue",
+                timePeriod: "",
+                no_of_persons: "\(unAssignedQueueList.count)",
                 status: "",
                 last: true)
-            
         }
         else{
             let obj = QueueListobj[index]
@@ -200,7 +200,7 @@ class adminshopVC: UIViewController {
     
     @IBAction func shareShopQRcodeBtn(_ sender: UIButton) {
         sender.bouncybutton {
-            self.shareOnSocialMedia(Content: ["Shop Name: \(adminShopListobj[Selectedshopindex].shop_name)","Shop Code: \(adminShopListobj[Selectedshopindex].shop_code)",self.QRcode.image!], ONsuccess: {
+            self.shareOnSocialMedia(Content: [self.QRcode.image!.jpegData(compressionQuality: 0.8)!], ONsuccess: {
                 self.showAlert(Title: "Success", Message: "Successfully shared")
             }, ONfail: {
                 self.showAlert(Title: "Error", Message: "failed to Share")

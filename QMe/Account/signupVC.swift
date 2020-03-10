@@ -18,6 +18,7 @@ class signupVC: UIViewController {
     //MARK:- IBOutlet
     @IBOutlet weak var profilepic: UIImageView!
     
+    @IBOutlet weak var headerTitle: UILabel!
     
     
     @IBOutlet weak var firstname: UITextField!
@@ -31,10 +32,17 @@ class signupVC: UIViewController {
     
     
     
+    let querytype = ["Login As Store Admin":"signup_admin",
+                     "Login As Clerk":"signup_clerk",
+                     "Login As User":"signup"]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        profilepic.image = UIImage(named: "profile")
+        
+        headerTitle.text = getString(key: loginAstitle).replacingOccurrences(of: "Login", with: "SignUp")
         bodyscroll.frame = CGRect(x: 0, y: 0, width: x, height: y)
         view.addSubview(bodyscroll)
         bodyview.frame = CGRect(x: 0, y: 0, width: x, height: 800)
@@ -66,32 +74,53 @@ class signupVC: UIViewController {
     
     @IBAction func signupButton(_ sender: UIButton) {
         sender.bouncybutton {
-            if self.validation() {
+            if self.validation(loginAs: getString(key: loginAstitle)) {
                 self.signupAPI()
             }
         }
     }
     
-    func validation() -> Bool{
-        if firstname.text!.isEmpty || email.text!.isEmpty || phoneno.text!.isEmpty || password.text!.isEmpty || confirmpassword.text!.isEmpty{
-            self.showAlert(Title: "Error", Message: "Textfield should not be empty!")
-            return false
-        }
-        else{
-            if password.text == confirmpassword.text {
-                return true
-            }else{
-                self.showAlert(Title: "Error", Message: "passwords doesn't matched!")
+    func validation(loginAs:String) -> Bool{
+        if loginAs == "Login As User" {
+            if firstname.text!.isEmpty || email.text!.isEmpty || password.text!.isEmpty || confirmpassword.text!.isEmpty{
+                self.showAlert(Title: "Error", Message: "Textfield should not be empty!")
                 return false
             }
+            else{
+                if password.text == confirmpassword.text {
+                    return true
+                }else{
+                    self.showAlert(Title: "Error", Message: "passwords doesn't matched!")
+                    return false
+                }
+            }
+        }else{
+            if profilepic.image == UIImage(named: "profile") || firstname.text!.isEmpty || email.text!.isEmpty || phoneno.text!.isEmpty || password.text!.isEmpty || confirmpassword.text!.isEmpty{
+                if profilepic.image == UIImage(named: "profile") {
+                    self.showAlert(Title: "Error", Message: "choose your Prifile picture")
+
+                }
+                self.showAlert(Title: "Error", Message: "Textfield should not be empty!")
+                return false
+            }
+            else{
+                if password.text == confirmpassword.text {
+                    return true
+                }else{
+                    self.showAlert(Title: "Error", Message: "passwords doesn't matched!")
+                    return false
+                }
+            }
         }
+        
     }
     
     func signupAPI(){
         self.startLoader()
+        print("signup api type: \(querytype[getString(key: loginAstitle)]!)")
         Alamofire.request("http://172.104.217.178/qme/api/",
                           method: .post,
-                          parameters: ["do":"signup",
+                          parameters: ["do":querytype[getString(key: loginAstitle)]!,
                                        "apikey":"mtechapi12345",
                                        "name":firstname.text!,
                                        "email":email.text!,

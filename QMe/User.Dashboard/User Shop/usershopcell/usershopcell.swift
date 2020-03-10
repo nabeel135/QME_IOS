@@ -16,10 +16,16 @@ class usershopcell: UIView {
     
     
     
-    func Input(any:Any,QueueName:String,QueueTotal:String,AppointmentBtn:Selector){
+    func Input(any:Any,QueueName:String,QueueTotal:String,AppointmentBtn:Selector,last:Bool){
         self.queuename.text = QueueName
         self.queuetotal.text = QueueTotal
-        self.appointmentbtn.addTarget(self, action: AppointmentBtn, for: .touchUpInside)
+        self.appointmentbtn.addTarget(any, action: AppointmentBtn, for: .touchUpInside)
+        
+        if last && userShopListobj.count>0 {
+            apIobj.unAssignedQueue(any: any as! UIViewController, shopId: userShopListobj[Selectedshopindex].shop_id) {
+            self.queuetotal.text = "\(unAssignedQueueList.count)"}
+        }
+        
     }
 
 }

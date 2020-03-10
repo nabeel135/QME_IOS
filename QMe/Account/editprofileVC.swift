@@ -31,11 +31,13 @@ class editprofileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        profilepic.loadimage(url: URL(string: getString(key: userImagkey))!)
+        profilepic.loadimage(url: URL(string: getString(key: userImagkey)) ?? URL(string: "https://www.aamindus.com/images/notfound.png")!)
         firstname.text = getString(key: userNamekey)
         phoneno.text = getString(key: userPhonekey)
         email.text = getString(key: userEmailkey)
         email.isEnabled = false
+        password.text = getString(key: userpasskey)
+        confirmpassword.text = getString(key: userpasskey)
         
     }
     
@@ -93,11 +95,13 @@ class editprofileVC: UIViewController {
                 switch(response.result){
                 case .success(let data):
                     let d = JSON(data)
+                    print(d)
                     /*------------------------*/
                     if d["success"].stringValue == "1" {
                         save(value: self.firstname.text!, key: userNamekey)
                         save(value: self.phoneno.text!, key: userPhonekey)
                         save(value: "http://172.104.217.178/qme/files/"+d["image"].stringValue, key: userImagkey)
+                        save(value: self.password.text!, key: userpasskey)
                         self.dismiss(animated: true)
                     }
                     else{

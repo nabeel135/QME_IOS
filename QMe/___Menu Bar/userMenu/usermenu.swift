@@ -19,7 +19,8 @@ class usermenu: UIView {
     
     
     func Input(any:Any,profilename:String,dashboardBtn:Selector,editBtn:Selector,logoutBtn:Selector){
-        self.profilepic.loadimage(url: URL(string: getString(key: userImagkey))!)
+        print(getString(key: userImagkey))
+        self.profilepic.loadimage(url: URL(string: getString(key: userImagkey)) ?? URL(string: "https://www.aamindus.com/images/notfound.png")!)
         self.profilename.text = profilename
         self.dashboardBtn.addTarget(any, action: dashboardBtn, for: .touchUpInside)
         self.editBtn.addTarget(any, action: editBtn, for: .touchUpInside)

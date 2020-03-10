@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA6EB4D582079E15C9831891 /* Pods_QMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70898032EBBD69DADDCDBA55 /* Pods_QMe.framework */; };
+		D6E999D1FF318ACB7B74A383 /* libPods-QMe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B63F0A77A128EE371D3BDC /* libPods-QMe.a */; };
 		FC069FF123EC49F6006E7881 /* editprofileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC069FF023EC49F6006E7881 /* editprofileVC.swift */; };
 		FC275FC023F28CB900C18809 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC275FBF23F28CB900C18809 /* API.swift */; };
 		FC275FC223F29AEB00C18809 /* delqueueNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC275FC123F29AEB00C18809 /* delqueueNib.xib */; };
@@ -79,7 +79,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		70898032EBBD69DADDCDBA55 /* Pods_QMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		02B63F0A77A128EE371D3BDC /* libPods-QMe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QMe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		874A847801B8AA720B45B6DD /* Pods-QMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QMe.debug.xcconfig"; path = "Target Support Files/Pods-QMe/Pods-QMe.debug.xcconfig"; sourceTree = "<group>"; };
 		9B7FC67D230BCE76884C14E4 /* Pods-QMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QMe.release.xcconfig"; path = "Target Support Files/Pods-QMe/Pods-QMe.release.xcconfig"; sourceTree = "<group>"; };
 		FC069FF023EC49F6006E7881 /* editprofileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editprofileVC.swift; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA6EB4D582079E15C9831891 /* Pods_QMe.framework in Frameworks */,
+				D6E999D1FF318ACB7B74A383 /* libPods-QMe.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,7 +169,7 @@
 		E93771C660489A4A30E57524 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				70898032EBBD69DADDCDBA55 /* Pods_QMe.framework */,
+				02B63F0A77A128EE371D3BDC /* libPods-QMe.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -265,7 +265,7 @@
 				FC5864D523E9147B00A5FE9C /* Add New Shop */,
 				FC5864DA23E9168D00A5FE9C /* popup.swift */,
 			);
-			path = "___Pop";
+			path = ___Pop;
 			sourceTree = "<group>";
 		};
 		FC5864D523E9147B00A5FE9C /* Add New Shop */ = {
@@ -520,7 +520,7 @@
 				FC96B7B723E3FB9B00B0B936 /* Sources */,
 				FC96B7B823E3FB9B00B0B936 /* Frameworks */,
 				FC96B7B923E3FB9B00B0B936 /* Resources */,
-				CF3FC74B61C87E78944979DA /* [CP] Embed Pods Frameworks */,
+				4B19BD410C56AEC44818F174 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -605,6 +605,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4B19BD410C56AEC44818F174 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QMe/Pods-QMe-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QMe/Pods-QMe-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QMe/Pods-QMe-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6EE03584D3F30E94ACDE2B74 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -625,23 +642,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CF3FC74B61C87E78944979DA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-QMe/Pods-QMe-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-QMe/Pods-QMe-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QMe/Pods-QMe-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -819,6 +819,7 @@
 				DEVELOPMENT_TEAM = 4JMBM32V39;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = QMe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -840,6 +841,7 @@
 				DEVELOPMENT_TEAM = 4JMBM32V39;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = QMe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

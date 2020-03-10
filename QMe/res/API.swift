@@ -54,7 +54,7 @@ class a {
     
     
     
-    func AddQueueAPI(any:UIViewController,adminId:String,shopId:String,shopCode:String,queueName:String,noOfpersons:String,clerkId:String,status:String,fromTime:String,toTime:String,runAfter:@escaping ()-> Void){
+    func AddQueueAPI(any:UIViewController,adminId:String,shopId:String,shopCode:String,queueName:String,noOfpersons:String,clerkId:String,status:String,fromTime:String,toTime:String,fromday:String,today:String,runAfter:@escaping ()-> Void){
         any.startLoader()
         Alamofire.request("http://172.104.217.178/qme/api/",
                           method: .post,
@@ -68,7 +68,9 @@ class a {
                                        "clerk":clerkId,
                                        "status":status,
                                        "opening_time":fromTime,
-                                       "closing_time":toTime],
+                                       "closing_time":toTime,
+                                       "opening_day":fromday,
+                                       "closing_day":today],
                           headers: ["Content-Type":"application/x-www-form-urlencoded"]).responseData
             { response in
                 switch response.result {
@@ -137,7 +139,7 @@ class a {
         }
     }
     
-    func unfollowShopAPI(any:UIViewController,UserID:String,shopId:String){
+    func unfollowShopAPI(any:UIViewController,UserID:String,shopId:String,runAfter:@escaping ()-> Void){
         any.startLoader()
         Alamofire.request("http://172.104.217.178/qme/api/",
                           method: .post,
@@ -149,9 +151,10 @@ class a {
                             
                             switch response.result {
                             case .success(let data):
-                                let d = JSON(data)
+//                                let d = JSON(data)
                                 any.stopLoader()
-                                any.showAlert(Title: "Message", Message: d["message"].stringValue)
+//                                any.showAlert(Title: "Message", Message: d["message"].stringValue)
+                                runAfter()
                             case .failure(let err):
                                 any.stopLoader()
                                 any.showAlert(Title: "Error", Message: err.localizedDescription)

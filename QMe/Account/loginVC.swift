@@ -35,14 +35,14 @@ class loginVC: UIViewController {
         loginTitle.text = getString(key: loginAstitle)
         
         
-        
-        if getString(key: loginAstitle) == "Login As User" {
-            signuplabel.isHidden = false
-            signupbutton.isHidden = false
-        }else{
-            signuplabel.isHidden = true
-            signupbutton.isHidden = true
-        }
+//
+//        if getString(key: loginAstitle) == "Login As User" {
+//            signuplabel.isHidden = false
+//            signupbutton.isHidden = false
+//        }else{
+//            signuplabel.isHidden = true
+//            signupbutton.isHidden = true
+//        }
         
         
         logo.image = #imageLiteral(resourceName: "logo")
@@ -106,7 +106,7 @@ class loginVC: UIViewController {
                     let d = JSON(data)
                     /*-----------------------*/
                     self.stopLoader()
-                    print(loginas)
+//                    print(d)
                     print(d["result"]["user_group"][0].stringValue)
                     
                     
@@ -119,6 +119,7 @@ class loginVC: UIViewController {
                             save(value: d["result"]["name"].stringValue, key: userNamekey)
                             save(value: d["result"]["phone"].stringValue, key: userPhonekey)
                             save(value: d["result"]["email"].stringValue, key: userEmailkey)
+                            save(value: d["result"]["password"].stringValue, key: userpasskey)
                             save(value: "http://172.104.217.178/qme/files/"+d["result"]["photo"].stringValue, key: userImagkey)
                             save(value: d["result"]["user_group"][0].stringValue, key: accTypekey)
                             

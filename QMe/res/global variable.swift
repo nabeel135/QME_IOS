@@ -22,6 +22,7 @@ let userNamekey = "name"
 let userPhonekey = "phone"
 let userEmailkey = "email"
 let userImagkey = "photo"
+let userpasskey = "password"
 let accTypekey = "accountType"
 let logedinkey = "logedinkey"
 

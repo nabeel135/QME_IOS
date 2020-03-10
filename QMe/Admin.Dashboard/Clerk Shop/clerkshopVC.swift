@@ -87,6 +87,7 @@ class clerkshopVC: UIViewController {
     
     // MARK:- Table
     let table = UI()
+    
     func tableUI(){
         table.TableView(x: 0, y: 0, width: x, height: y-bodyview.frame.minY, bkcolor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), border: 0, borderColor: .clear, separatorColor: .clear, Sections: 1, SectionHeight: 0, SectionHEIGHT: {
         }, sectionView: {
@@ -128,8 +129,6 @@ class clerkshopVC: UIViewController {
         }
     }
     
-    
-    
     @IBAction func timeperiodBtn(_ sender: UIButton) {
         sender.bouncybutton {
             popup.Appeartimeperiodpicker(parent: self, label: self.timeperiod)
@@ -141,6 +140,37 @@ class clerkshopVC: UIViewController {
             self.dismiss(animated: false)
         }
     }
+    
+    @IBAction func menuBUTTON(_ sender: UIButton) {
+        menubar.AppearUserMenu(parent: self,
+                               ProfileName: getString(key: userNamekey),
+                               DashboardBtn: #selector(self.dashboardBUTTON),
+                               editBtn: #selector(self.editprofiepage),
+                               logoutBtn: #selector(self.logoutBUTTON),
+                               inView: self.view)
+    }
+    
+    
+    
+    @objc func dashboardBUTTON(_ btn:UIButton){
+        btn.bouncybutton {
+            menubar.disAppear()
+        }
+    }
+    @objc func editprofiepage(_ btn:UIButton){
+        btn.bouncybutton {
+            menubar.disAppear()
+            self.present(storyboardView(boardName: "main", pageID: "editprofileVC"), animated: true)
+        }
+    }
+    @objc func logoutBUTTON(_ btn:UIButton){
+        btn.bouncybutton {
+            menubar.disAppear()
+            save(value: false, key: logedinkey)
+            self.present(storyboardView(boardName: "main", pageID: "loginVC"), animated: false)
+        }
+    }
+    
     
     
 }

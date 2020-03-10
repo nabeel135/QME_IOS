@@ -54,7 +54,7 @@ class usershopVC: UIViewController {
     func tableUI(){
         table.TableView(x: 0, y: 0, width: x, height: y-bodyscroll.frame.minY, bkcolor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), border: 0, borderColor: .clear, separatorColor: .clear, Sections: 1, SectionHeight: 0, SectionHEIGHT: {
         }, sectionView: {
-        }, rows: QueueListobj.count, Rows: {
+        }, rows: QueueListobj.count+1, Rows: {
         }, editing: false, cellheight: 50, CellHeight: {
         }, Cellview: {
             self.cellview()
@@ -62,6 +62,7 @@ class usershopVC: UIViewController {
         }, view: bodyscroll)
         unassignedview.frame = CGRect(x: 0, y: table.table.frame.maxY, width: x, height: 30)
         bodyscroll.addSubview(unassignedview)
+        unassignedview.isHidden = true
     }
     
     func cellview(){
@@ -78,15 +79,30 @@ class usershopVC: UIViewController {
         unassignedview.frame.origin.y = cell.frame.maxY
         bodyscroll.contentSize.height = cell.frame.maxY+30
         
-        cellview.Input(any: self,
-                       QueueName: QueueListobj[index].queue_name,
-                       QueueTotal: QueueListobj[index].queue_person,
-                       AppointmentBtn: #selector(appointmentButton(_:)))
+        
+        if index == QueueListobj.count {
+            cellview.appointmentbtn.isHidden = true
+            cellview.Input(any: self,
+                           QueueName: "Unassigned Queue",
+                           QueueTotal: "\(unAssignedQueueList.count)",
+                           AppointmentBtn: #selector(appointmentButton(_:)),
+                           last: true)
+        }
+        else{
+            cellview.Input(any: self,
+            QueueName: QueueListobj[index].queue_name,
+            QueueTotal: QueueListobj[index].queue_person,
+            AppointmentBtn: #selector(appointmentButton(_:)),
+            last: false)
+        }
+        
+        
+        
     }
     
     
     @objc func appointmentButton(_ btn:UIButton){
-        
+        self.showAlert(Title: "Coming Soon", Message: "")
     }
     
     
@@ -150,10 +166,20 @@ class usershopVC: UIViewController {
                               UserID: getString(key: userIDkey),
                               shopId: QueueListobj[0].shop_id,
                               shopCode: QueueListobj[0].shop_code)
-            }else{
-                apIobj.unfollowShopAPI(any: self,
-                                UserID: getString(key: userIDkey),
-                                shopId: userShopListobj[Selectedshopindex].shop_id)
+            }
+            else{
+                let alert = UIAlertController(title: "Message", message: "Are you sure you want to Unfollow?", preferredStyle:  .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                    apIobj.unfollowShopAPI(any: self,
+                    UserID: getString(key: userIDkey),
+                    shopId: userShopListobj[Selectedshopindex].shop_id){
+                        self.dismiss(animated: true)
+                    }
+                }))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) in
+                }))
+                self.present(alert, animated: true)
+                
             }
         }
     }
